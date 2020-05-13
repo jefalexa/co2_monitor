@@ -16,7 +16,7 @@ while 1:
 		if weight_avg == 0:
 			weight_avg = weight
 		weight_avg = (weight_avg + weight) / 2
-		print(weight, weight_avg)
+		print(weight, round(weight_avg, 2)
 		counter += 1
 	except:
 		print(y)
