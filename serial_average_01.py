@@ -23,5 +23,5 @@ while 1:
 		weight_avg = sum(wlist) / len(wlist)
 		dt = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M")
 		print("{}:  1 Minute Average:  {}".format(dt, round(weight_avg, 2)))
-		logging.log(msg="{}:  1 Minute Average:  {}".format(dt2, round(weight_avg, 2)), level=logging.INFO)
+		logging.log(msg="{}:  1 Minute Average:  {}".format(dt, round(weight_avg, 2)), level=logging.INFO)
 		wlist = []
