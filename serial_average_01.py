@@ -28,6 +28,6 @@ while 1:
 		dt = datetime.datetime.now()
 		dt2 = dt.strftime("%Y-%m-%d_%H-%M")
 		print("{}:  1 Minute Average:  {}".format(dt2, round(weight_avg, 2)))
-		logging.log(msg"{}:  1 Minute Average:  {}".format(dt2, round(weight_avg, 2)), level=logging.INFO)
+		logging.log(msg="{}:  1 Minute Average:  {}".format(dt2, round(weight_avg, 2)), level=logging.INFO)
 		counter = 0
 		weight_avg = 0
