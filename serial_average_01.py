@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 import time
 import serial
+import datetime
+import logging
+
+logging.basicConfig(filename='co2mon.log', level=logging.INFO)
 
 ser = serial.Serial(port='/dev/ttyUSB0', baudrate = 9600, parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE, bytesize=serial.EIGHTBITS, timeout=1)
 
@@ -21,6 +25,8 @@ while 1:
 	except:
 		print(y)
 	if counter >= 60:
-		print("Average:  {}".format(round(weight_avg, 2)))
+		dt = datetime.datetime.now()
+		dt2 = dt.strftime("%Y-%m-%d_%H-%M")
+		print("{}:  1 Minute Average:  {}".format(dt2, round(weight_avg, 2)))
 		counter = 0
 		weight_avg = 0
