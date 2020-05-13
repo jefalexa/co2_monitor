@@ -29,7 +29,10 @@ while 1:
 		wlist = []
 		if len(walist) >= 10:
 			weight_avg = sum(walist) / len(walist)
+			weight_change = walist[0] - walist[-1]
 			dt = datetime.datetime.now().strftime("%Y-%m-%d_%H%M")
-			print("{}:  10 Minute Average:  {}".format(dt, round(weight_avg, 2)))
-			logging.log(msg="{}:  10 Minute Average:  {}".format(dt, round(weight_avg, 2)), level=logging.INFO)
+			print("{}:  10 Minute Average:  {}".format(dt, round(weight_change, 2)))
+			logging.log(msg="{}:  10 Minute Average:  {}".format(dt, round(weight_change, 2)), level=logging.INFO)
+			print("{}:  10 Minute Change:  {}".format(dt, round(weight_avg, 2)))
+			logging.log(msg="{}:  10 Minute Change:  {}".format(dt, round(weight_avg, 2)), level=logging.INFO)
 			walist = []
