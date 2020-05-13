@@ -16,10 +16,10 @@ while 1:
 		if weight_avg == 0:
 			weight_avg = weight
 		weight_avg = (weight_avg + weight) / 2
-		print(weight, round(weight_avg, 2))
+		#print(weight, round(weight_avg, 2))
 		counter += 1
 	except:
 		print(y)
 	if counter >= 60:
-		print("Average:  {}".format(weight_avg))
+		print("Average:  {}".format(round(weight_avg, 2)))
 		counter = 0
