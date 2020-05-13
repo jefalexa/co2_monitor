@@ -6,7 +6,7 @@ ser = serial.Serial(port='/dev/ttyUSB0', baudrate = 9600, parity=serial.PARITY_N
 
 counter=0
 weight_avg = 0
-
+	
 while 1:
 	x = ser.readline()
 	y = str(x)
@@ -23,3 +23,4 @@ while 1:
 	if counter >= 60:
 		print("Average:  {}".format(round(weight_avg, 2)))
 		counter = 0
+		weight_avg = 0
