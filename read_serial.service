@@ -1,0 +1,12 @@
+[Unit]
+Description=Reads the serial controller input and logs the data
+After=network.target auditd.service
+
+[Service]
+ExecStart=/home/pi/co2_monitor/read_serial.py
+KillMode=process
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
