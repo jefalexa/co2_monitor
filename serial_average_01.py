@@ -32,8 +32,10 @@ while 1:
 			weight_change = walist[0] - walist[-1]
 			weight_avg_display = round(weight_avg, 2)
 			weight_change_display = round(weight_change, 2)
-			dt = datetime.datetime.now().strftime("%Y-%m-%d_%H%M")
+			now = datetime.datetime.now()
+			dt = now.strftime("%Y-%m-%d_%H%M")
+			ts = now.timestamp()
 			print("{}:  10 Minute Average:  {}".format(dt, weight_avg_display))
 			print("{}:  10 Minute Change:  {}".format(dt, weight_change_display))
-			logging.log(msg="{}:  {{'10 Minute Average':{}, '10 Minute Change':{}}}".format(dt, weight_avg_display, weight_change_display), level=logging.INFO)
+			logging.log(msg="{}:  {{'Timestamp':{}, '10 Minute Average':{}, '10 Minute Change':{}}}".format(dt, ts, weight_avg_display, weight_change_display), level=logging.INFO)
 			walist = []

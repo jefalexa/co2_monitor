@@ -20,12 +20,12 @@ logging.basicConfig(format="%(filename)s:%(lineno)s - %(funcName)s() %(message)s
 #logging.basicConfig(filename='/var/log/co2mon.log', level=logging.INFO)
 
 #logger.setLevel(logging.INFO)
-
+ 
 # ------------------
 # Setup Stackdriver
 # ------------------
 
-auth_file = '/home/pi/co2_monitor/homelab-266121-2389cbbb58c3.json'
+auth_file = 'homelab-266121-2389cbbb58c3.json'
 
 # Instantiates a client
 client = google.cloud.logging.Client.from_service_account_json(auth_file)
@@ -68,5 +68,5 @@ while 1:
 			ts = now.timestamp()
 			print("{}:  10 Minute Average:  {}".format(dt, weight_avg_display))
 			print("{}:  10 Minute Change:  {}".format(dt, weight_change_display))
-			logging.log(msg="{{'Timestamp':{}, '10 Minute Average':{}, '10 Minute Change':{}}}".format(ts, weight_avg_display, weight_change_display), level=logging.INFO)
+			logging.log(msg="{}:  {{'Timestamp':{}, '10 Minute Average':{}, '10 Minute Change':{}}}".format(dt, ts, weight_avg_display, weight_change_display), level=logging.INFO)
 			walist = []
