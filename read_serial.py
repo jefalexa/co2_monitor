@@ -52,7 +52,12 @@ while 1:
 	except:
 		print(y)
 	if len(wlist) >= 60:
-		weight_avg = sum(wlist) / len(wlist)
+		try:
+			wlist.sort()
+			weight_avg = (wlist[30] + wlist[29]) /2
+		except:
+			weight_avg = sum(wlist) / len(wlist)
+			logging.log(msg="Error calculating median, reverting to mean", level=logging.INFO)
 		walist.append(weight_avg)
 		dt = datetime.datetime.now().strftime("%Y-%m-%d_%H%M")
 		print("{}:  1 Minute Average:  {}".format(dt, round(weight_avg, 2)))
