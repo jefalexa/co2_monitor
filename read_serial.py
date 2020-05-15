@@ -76,7 +76,7 @@ while 1:
 			logging.log(msg="{{'Timestamp':{}, '10 Minute Average':{}, '10 Minute Change':{}}}".format(ts, weight_avg_display, weight_change_display), level=logging.INFO)
 			if weight_change >= 1:
 				logging.log(msg="{{'Timestamp':{}, WARNING Very High Weight Change '10 Minute Change':{}}}".format(ts, weight_change_display), level=logging.critical)
-			elif weight_change >= 0.1:
+			elif weight_change >= 0.2:
 				logging.log(msg="{{'Timestamp':{}, WARNING High Weight Change '10 Minute Change':{}}}".format(ts, weight_change_display), level=logging.error)
 			elif weight_change >= 0.1:
 				logging.log(msg="{{'Timestamp':{}, WARNING Above Average Weight Change '10 Minute Change':{}}}".format(ts, weight_change_display), level=logging.warning)
